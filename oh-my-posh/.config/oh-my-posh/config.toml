@@ -1,0 +1,131 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version = 2
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+
+[palette]
+rosewater = '#f5e0dc'
+flamingo = '#f2cdcd'
+pink = '#f5c2e7'
+mauve = '#cba6f7'
+red = '#f38ba8'
+maroon = '#eba0ac'
+peach = '#fab387'
+yellow = '#f9e2af'
+green = '#a6e3a1'
+teal = '#94e2d5'
+sky = '#89dceb'
+blue = '#89b4fa'
+lavender = '#b4befe'
+text = '#cdd6f4'
+base = '#1e1e2e'
+mantle = '#181825'
+crust = '#11111b'
+trans = '#00000000'
+  
+  
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    background = "p:teal"
+    foreground = "transparent"
+    leading_diamond = ""
+    style = "diamond"
+    template = " {{.Icon}} "
+    trailing_diamond = "<transparent,p:teal></>"
+    type = "os"
+
+  [[blocks.segments]]
+    type = "path"
+    background = "p:green"
+    foreground = "transparent"
+    style = "diamond"
+    leading_diamond = ""
+    template = " {{ if contains \"dev\" .Path }} {{ else }} {{ end }} "
+    [blocks.segments.properties]
+      style = 'full'
+
+  [[blocks.segments]]
+    type = "shell"
+    background = "p:green"
+    foreground = "transparent"
+    style = "diamond"
+    trailing_diamond = "<transparent,p:green></>"
+    template = " {{.UserName}} "
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'diamond'
+    background = 'p:mauve'
+    foreground = 'transparent'
+    leading_diamond = ""
+    trailing_diamond = "<transparent,p:mauve></>"
+    template = '{{ .Path }} '
+
+    [blocks.segments.properties]
+      style = 'full'
+      home_icon = "   "
+      folder_separator_template = "<transparent>  </>"
+      folder_icon = "󰉋 "
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'diamond'
+    foreground = 'transparent'
+    background = 'p:red'
+    leading_diamond = ""
+    trailing_diamond = "<transparent,p:red></>"
+    template = '   {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}  {{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      commit_icon = '@'
+      fetch_status = true
+
+[[blocks]]
+  type = 'rprompt'
+  alignment = 'left'
+  newline = false 
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'yellow'
+    background = 'transparent'
+    template = '{{ .FormattedMs }}'
+
+    [blocks.segments.properties]
+      threshold = 5000
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground_templates = [
+      "{{if gt .Code 0}}p:red{{end}}",
+      "{{if eq .Code 0}}p:lavender{{end}}",
+    ]
+    background = 'transparent'
+    template = '<f> </f>'
+
+[transient_prompt]
+  foreground_templates = [
+    "{{if gt .Code 0}}p:red{{end}}",
+    "{{if eq .Code 0}}p:lavender{{end}}",
+  ]
+  background = 'transparent'
+  template = ' '
+
+[secondary_prompt]
+  foreground = 'p:mauve'
+  background = 'transparent'
+  template = ' '
