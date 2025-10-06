@@ -32,6 +32,6 @@ return { -- Collection of various small independent plugins/modules
       },
     }
 
-    vim.keymap.set('n', '<leader>pv', minifiles.open, { desc = '[F]ile [F]inder' })
+    vim.keymap.set('n', '<leader>pb', minifiles.open, { desc = '[F]ile [F]inder' })
   end,
 }

@@ -1,3 +1,3 @@
 require 'miguelpanuto'
 
-Define_Colorschema 'tokyonight-night'
+Define_Colorschema 'tokyodark'

@@ -10,7 +10,7 @@ require('lazy').setup {
   require 'miguelpanuto.plugins.telescope',
   require 'miguelpanuto.plugins.lsp',
   require 'miguelpanuto.plugins.cmp',
-  -- require 'miguelpanuto.plugins.oil',
+  require 'miguelpanuto.plugins.oil',
   require 'miguelpanuto.plugins.harpoon',
   require 'miguelpanuto.plugins.autopairs',
   require 'miguelpanuto.plugins.undotree',
@@ -26,13 +26,11 @@ require('lazy').setup {
   require 'miguelpanuto.plugins.rose_pyne',
   require 'miguelpanuto.plugins.catppuccin',
   require 'miguelpanuto.plugins.kanagawa',
-  require 'miguelpanuto.plugins.codecompanion',
+  require 'miguelpanuto.plugins.cyberdream',
 
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   { 'numToStr/Comment.nvim', opts = {} },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-
-  'github/copilot.vim',
 }
