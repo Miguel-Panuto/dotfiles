@@ -1,5 +1,4 @@
 return {
-  'catppuccin/nvim',
+  src = 'https://github.com/catppuccin/nvim',
   name = 'catppuccin',
-  priority = 1000,
 }

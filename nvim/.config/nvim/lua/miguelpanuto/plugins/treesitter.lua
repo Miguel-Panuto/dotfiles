@@ -1,7 +1,13 @@
-return { -- Highlight, edit, and navigate code
-  'nvim-treesitter/nvim-treesitter',
-  build = ':TSUpdate',
-  config = function()
+return {
+  src = 'https://github.com/nvim-treesitter/nvim-treesitter',
+  version = 'master',
+  build = function(data)
+    if not data.active then
+      vim.cmd.packadd(data.spec.name)
+    end
+    vim.cmd 'TSUpdate'
+  end,
+  setup = function()
     ---@diagnostic disable-next-line: missing-fields
     require('nvim-treesitter.configs').setup {
       ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },

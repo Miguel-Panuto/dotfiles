@@ -1,6 +1,6 @@
 return {
-  'tiagovla/tokyodark.nvim',
-  opts = {
-    -- custom options here
-  },
+  src = 'https://github.com/tiagovla/tokyodark.nvim',
+  setup = function()
+    require('tokyodark').setup {}
+  end,
 }

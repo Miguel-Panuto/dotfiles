@@ -1,6 +1,6 @@
 return {
-  'theprimeagen/harpoon',
-  config = function()
+  src = 'https://github.com/theprimeagen/harpoon',
+  setup = function()
     local mark = require 'harpoon.mark'
     local ui = require 'harpoon.ui'
 

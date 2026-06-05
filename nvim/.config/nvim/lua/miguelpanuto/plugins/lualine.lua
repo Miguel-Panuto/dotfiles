@@ -1,7 +1,6 @@
 return {
-  'nvim-lualine/lualine.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  config = function()
+  src = 'https://github.com/nvim-lualine/lualine.nvim',
+  setup = function()
     require('lualine').setup {
       option = {
         theme = 'modus-vivendi',

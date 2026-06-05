@@ -1,63 +1,19 @@
 return {
-  'nvim-telescope/telescope.nvim',
-  event = 'VimEnter',
-  branch = '0.1.x',
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    {
-      'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'make',
-      cond = function()
-        return vim.fn.executable 'make' == 1
-      end,
-    },
-    { 'nvim-telescope/telescope-ui-select.nvim' },
-
-    { 'nvim-tree/nvim-web-devicons' },
-  },
-  config = function()
+  src = 'https://github.com/nvim-telescope/telescope.nvim',
+  version = '0.1.x',
+  setup = function()
     require('telescope').setup {
       pickers = {
-        find_files = {
-          theme = 'dropdown',
-          hidden = true,
-        },
-        live_grep = {
-          theme = 'dropdown',
-          hidden = true,
-        },
-        oldfiles = {
-          theme = 'dropdown',
-          hidden = true,
-        },
-        buffers = {
-          theme = 'dropdown',
-          hidden = true,
-        },
-        help_tags = {
-          theme = 'dropdown',
-          hidden = true,
-        },
-        keymaps = {
-          theme = 'dropdown',
-          hidden = true,
-        },
-        resume = {
-          theme = 'dropdown',
-          hidden = true,
-        },
-        grep_string = {
-          theme = 'dropdown',
-          hidden = true,
-        },
-        current_buffer_fuzzy_find = {
-          theme = 'dropdown',
-          hidden = true,
-        },
-        diagnostics = {
-          theme = 'dropdown',
-          hidden = true,
-        },
+        find_files = { theme = 'dropdown', hidden = true },
+        live_grep = { theme = 'dropdown', hidden = true },
+        oldfiles = { theme = 'dropdown', hidden = true },
+        buffers = { theme = 'dropdown', hidden = true },
+        help_tags = { theme = 'dropdown', hidden = true },
+        keymaps = { theme = 'dropdown', hidden = true },
+        resume = { theme = 'dropdown', hidden = true },
+        grep_string = { theme = 'dropdown', hidden = true },
+        current_buffer_fuzzy_find = { theme = 'dropdown', hidden = true },
+        diagnostics = { theme = 'dropdown', hidden = true },
       },
       extensions = {
         ['ui-select'] = {

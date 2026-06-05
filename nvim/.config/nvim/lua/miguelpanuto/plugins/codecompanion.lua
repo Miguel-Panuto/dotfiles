@@ -1,13 +1,7 @@
 return {
-  'olimorris/codecompanion.nvim',
-  opts = {},
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    'nvim-treesitter/nvim-treesitter',
-  },
-  config = function()
-    local codecompanion = require 'codecompanion'
-    codecompanion.setup {
+  src = 'https://github.com/olimorris/codecompanion.nvim',
+  setup = function()
+    require('codecompanion').setup {
       display = {
         action_palette = {
           width = 95,
